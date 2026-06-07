@@ -62,19 +62,19 @@ const projectGroups: ProjectGroup[] = [
             {
                 title: "Recruitment Management System",
                 description: "End-to-end recruitment workflow covering recruitment plans, bulk recruitment requests, candidate interviews, technical and HR evaluations, interviewer assignments, approval workflows, automated notifications, UAT, and user documentation.",
-                technologies: ["NetSuite", "SuiteScript", "JavaScript", "Custom Records", "NetSuite Workflows", "Email Automation", "HTML / CSS", "PDF Templates", "UAT & Documentation"],
+                technologies: ["NetSuite", "SuiteScript", "Workflows", "JavaScript"],
                 Icon: MdPeopleAlt,
             },
             {
                 title: "Organisation Confirmation Dashboard",
                 description: "Manager-facing dashboard displaying employees within the manager's organisation, including employee ID, name, job title, project, employment status, confirmation status, and remarks for incorrectly assigned employees.",
-                technologies: ["NetSuite", "SuiteScript", "Suitelet", "JavaScript", "HTML / CSS", "Saved Searches", "NetSuite Records", "Role-Based Access", "Dynamic Data Fetching"],
+                technologies: ["NetSuite", "Suitelet", "Saved Searches", "JavaScript"],
                 Icon: MdSpaceDashboard,
             },
             {
                 title: "Cybersecurity Quiz & Certificate System",
                 description: "Internal cybersecurity awareness platform that randomly selects five questions from a question bank, calculates employee scores, records results, and automatically generates personalised completion certificates.",
-                technologies: ["SharePoint Lists", "Power Automate", "Microsoft Forms", "PDF Generation", "Word Templates", "Excel", "Conditional Logic", "Certificate Automation"],
+                technologies: ["Power Automate", "Microsoft Forms", "SharePoint", "PDF Generation"],
                 Icon: MdSecurity,
             },
             {
