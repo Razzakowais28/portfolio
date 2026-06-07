@@ -61,20 +61,20 @@ const projectGroups: ProjectGroup[] = [
             },
             {
                 title: "Recruitment Management System",
-                description: "Full recruitment workflow covering recruitment plans, bulk requests, candidate interviews, technical and HR evaluations, interviewer assignment, approval workflows, user manuals, and UAT documentation.",
-                technologies: ["SharePoint", "Power Automate", "Microsoft Forms", "Teams", "Excel"],
+                description: "End-to-end recruitment workflow covering recruitment plans, bulk recruitment requests, candidate interviews, technical and HR evaluations, interviewer assignments, approval workflows, automated notifications, UAT, and user documentation.",
+                technologies: ["NetSuite", "SuiteScript", "JavaScript", "Custom Records", "NetSuite Workflows", "Email Automation", "HTML / CSS", "PDF Templates", "UAT & Documentation"],
                 Icon: MdPeopleAlt,
             },
             {
-                title: "Org Confirmation Dashboard",
-                description: "Manager dashboard showing employees under their organisation with employee ID, name, job title, project, employment status, a confirmation checkbox, and remarks for incorrectly assigned employees.",
-                technologies: ["SharePoint", "Power Automate", "JavaScript", "Microsoft Lists"],
+                title: "Organisation Confirmation Dashboard",
+                description: "Manager-facing dashboard displaying employees within the manager's organisation, including employee ID, name, job title, project, employment status, confirmation status, and remarks for incorrectly assigned employees.",
+                technologies: ["NetSuite", "SuiteScript", "Suitelet", "JavaScript", "HTML / CSS", "Saved Searches", "NetSuite Records", "Role-Based Access", "Dynamic Data Fetching"],
                 Icon: MdSpaceDashboard,
             },
             {
                 title: "Cybersecurity Quiz & Certificate System",
-                description: "Internal awareness platform that selects 5 random questions from a ~100-question bank, calculates scores, records results, and automatically generates personalised completion certificates.",
-                technologies: ["SharePoint", "Power Automate", "Microsoft Forms", "PDF Generation"],
+                description: "Internal cybersecurity awareness platform that randomly selects five questions from a question bank, calculates employee scores, records results, and automatically generates personalised completion certificates.",
+                technologies: ["SharePoint Lists", "Power Automate", "Microsoft Forms", "PDF Generation", "Word Templates", "Excel", "Conditional Logic", "Certificate Automation"],
                 Icon: MdSecurity,
             },
             {
