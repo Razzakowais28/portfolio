@@ -1,6 +1,7 @@
 import { Expressjs, JavaScript, Python, 
     Git, MongoDB, PostgreSQL, Postman, MySQL,
     React, Nodejs, GitHub, HTML5, CSS, Flask, Docker } from "../ui/DevIcons"
+import { PowerAutomate, SharePoint, MicrosoftAzure, NetSuite, PowerPlatform, Webhooks } from "../ui/IntegrationIcons"
 import SkillCard from "./SkillCard"
 import FadeIn from "../ui/FadeIn"
 
@@ -41,12 +42,12 @@ const categories = [
     {
         title: "Integration",
         skills: [
-            { name: "Power Automate" },
-            { name: "SharePoint" },
-            { name: "Microsoft Azure" },
-            { name: "NetSuite" },
-            { name: "Power Platform" },
-            { name: "Webhooks" },
+            { name: "Power Automate", Icon: PowerAutomate },
+            { name: "SharePoint", Icon: SharePoint },
+            { name: "Microsoft Azure", Icon: MicrosoftAzure },
+            { name: "NetSuite", Icon: NetSuite },
+            { name: "Power Platform", Icon: PowerPlatform },
+            { name: "Webhooks", Icon: Webhooks },
         ]
     },
     {
