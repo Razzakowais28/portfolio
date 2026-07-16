@@ -144,3 +144,17 @@
     cursor: pointer;
   }
 }
+
+@keyframes status-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@utility animate-status-blink {
+  animation: status-blink 1.4s steps(2, jump-none) infinite;
+}
