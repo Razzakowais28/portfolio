@@ -82,7 +82,7 @@ export default function Home() {
                   </Link>
 
                   <a
-                    href={`${import.meta.env.BASE_URL}Mohammed_Owais_Software Developer_3yr exp.pdf`}
+                    href={`${import.meta.env.BASE_URL}Owais_Resume.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto cursor-pointer border-3 border-dashed border-foreground bg-card text-foreground text-xs sm:text-sm font-bold uppercase tracking-wider px-6 py-3 rounded-none shadow-[4px_4px_0px_0px_var(--foreground)] hover:bg-foreground hover:text-background hover:border-solid hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_var(--foreground)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all text-center flex items-center justify-center gap-2"
