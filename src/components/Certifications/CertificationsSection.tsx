@@ -12,8 +12,8 @@ const certifications = [
         issuer: "Oracle NetSuite",
         year: "Aug 2026",
         description: "Earned the NetSuite Certified AI Foundations Associate designation, validating foundational knowledge of artificial intelligence concepts and their application across the NetSuite ecosystem.",
-        image: `${base}certifications/netsuite-ai-foundations-associate.png`,
-        credentialUrl: `${base}certifications/netsuite-ai-foundations-associate.pdf`,
+        image: `${base}certifications/netsuite-ai-foundations-associate.png?v=20260815-name-fix`,
+        credentialUrl: `${base}certifications/netsuite-ai-foundations-associate.pdf?v=20260815-name-fix`,
         credentialId: "330585144N16765GC10",
     },
     {
