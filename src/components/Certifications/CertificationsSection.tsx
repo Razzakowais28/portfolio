@@ -8,6 +8,15 @@ const base = import.meta.env.BASE_URL;
 
 const certifications = [
     {
+        title: "NetSuite Certified AI Foundations Associate",
+        issuer: "Oracle NetSuite",
+        year: "Aug 2026",
+        description: "Earned the NetSuite Certified AI Foundations Associate designation, validating foundational knowledge of artificial intelligence concepts and their application across the NetSuite ecosystem.",
+        image: `${base}certifications/netsuite-ai-foundations-associate.png`,
+        credentialUrl: `${base}certifications/netsuite-ai-foundations-associate.pdf`,
+        credentialId: "330585144N16765GC10",
+    },
+    {
         title: "AI Training Hackathon",
         issuer: "KANZ AI · LAU ACE",
         year: "Jul 2026",
