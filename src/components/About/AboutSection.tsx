@@ -44,7 +44,7 @@ const educationJourney = [
 ];
 
 const quickStats = [
-    { value: "4+", label: "Years of Experience", accent: "text-foreground" },
+    { value: "3+", label: "Years of Experience", accent: "text-foreground" },
     { value: "10+", label: "Projects Delivered", accent: "text-foreground" },
     { value: "3", label: "Companies Worked At", accent: "text-foreground" },
 ];
