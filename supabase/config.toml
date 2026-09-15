@@ -1,0 +1,4 @@
+project_id = "mbsutriudvxfrilprapb"
+
+[functions.set-live-status]
+verify_jwt = false
