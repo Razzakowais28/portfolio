@@ -8,7 +8,8 @@ export type StatusKey =
   | "available"
   | "gaming"
   | "weekend"
-  | "sleeping";
+  | "sleeping"
+  | "scrolling_reels";
 
 export type LiveStatus = {
   key: StatusKey;
@@ -28,7 +29,29 @@ export const statuses: Record<StatusKey, Omit<LiveStatus, "key" | "active">> = {
   gaming: { label: "GAMING", icon: "🎮" },
   weekend: { label: "WEEKEND MODE", icon: "🌴" },
   sleeping: { label: "SLEEPING", icon: "🌙" },
+  scrolling_reels: { label: "SCROLLING REELS", icon: "📱" },
 };
+
+export type StatusOverride = LiveStatus;
+
+const STATUS_API_URL = import.meta.env.VITE_STATUS_API_URL?.replace(/\/$/, "");
+
+export async function fetchStatusOverride(): Promise<StatusOverride | null> {
+  if (!STATUS_API_URL) return null;
+
+  try {
+    const response = await fetch(`${STATUS_API_URL}/api/status`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) return null;
+
+    const data = (await response.json()) as { override?: StatusOverride | null };
+    return data.override ?? null;
+  } catch {
+    return null;
+  }
+}
 
 /** Saudi Arabia local clock (AST, UTC+3) — Sun–Thu work week. */
 export const TIMEZONE = "Asia/Riyadh";

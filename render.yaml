@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: portfolio-status-api
+    runtime: node
+    rootDir: api
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: STATUS_TOKEN
+        generateValue: true
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: portfolio-status-kv
+          property: connectionString
+
+  - type: keyvalue
+    name: portfolio-status-kv
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []
