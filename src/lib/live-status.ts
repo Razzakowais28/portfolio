@@ -1,3 +1,5 @@
+import { getSupabaseClient } from "@/lib/supabase";
+
 export type StatusKey =
   | "work"
   | "coding"
@@ -8,7 +10,8 @@ export type StatusKey =
   | "available"
   | "gaming"
   | "weekend"
-  | "sleeping";
+  | "sleeping"
+  | "scrolling_reels";
 
 export type LiveStatus = {
   key: StatusKey;
@@ -28,7 +31,34 @@ export const statuses: Record<StatusKey, Omit<LiveStatus, "key" | "active">> = {
   gaming: { label: "GAMING", icon: "🎮" },
   weekend: { label: "WEEKEND MODE", icon: "🌴" },
   sleeping: { label: "SLEEPING", icon: "🌙" },
+  scrolling_reels: { label: "SCROLLING REELS", icon: "📱" },
 };
+
+export type StatusOverride = LiveStatus;
+
+export async function fetchStatusOverride(): Promise<StatusOverride | null> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return null;
+
+  try {
+    const { data, error } = await supabase
+      .from("live_status_override")
+      .select("status_key, label, icon, active")
+      .eq("id", 1)
+      .maybeSingle();
+
+    if (error || !data?.status_key) return null;
+
+    return {
+      key: data.status_key as StatusKey,
+      label: data.label,
+      icon: data.icon,
+      active: data.active,
+    };
+  } catch {
+    return null;
+  }
+}
 
 /** Saudi Arabia local clock (AST, UTC+3) — Sun–Thu work week. */
 export const TIMEZONE = "Asia/Riyadh";
