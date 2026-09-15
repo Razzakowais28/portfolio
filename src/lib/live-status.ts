@@ -1,3 +1,5 @@
+import { getSupabaseClient } from "@/lib/supabase";
+
 export type StatusKey =
   | "work"
   | "coding"
@@ -34,20 +36,25 @@ export const statuses: Record<StatusKey, Omit<LiveStatus, "key" | "active">> = {
 
 export type StatusOverride = LiveStatus;
 
-const STATUS_API_URL = import.meta.env.VITE_STATUS_API_URL?.replace(/\/$/, "");
-
 export async function fetchStatusOverride(): Promise<StatusOverride | null> {
-  if (!STATUS_API_URL) return null;
+  const supabase = getSupabaseClient();
+  if (!supabase) return null;
 
   try {
-    const response = await fetch(`${STATUS_API_URL}/api/status`, {
-      cache: "no-store",
-    });
+    const { data, error } = await supabase
+      .from("live_status_override")
+      .select("status_key, label, icon, active")
+      .eq("id", 1)
+      .maybeSingle();
 
-    if (!response.ok) return null;
+    if (error || !data?.status_key) return null;
 
-    const data = (await response.json()) as { override?: StatusOverride | null };
-    return data.override ?? null;
+    return {
+      key: data.status_key as StatusKey,
+      label: data.label,
+      icon: data.icon,
+      active: data.active,
+    };
   } catch {
     return null;
   }
