@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  fetchStatusOverride,
   formatSaudiTime,
   getCurrentStatus,
   LOCATION_LABEL,
@@ -13,28 +12,15 @@ export default function LiveStatusBadge({ className }: { className?: string }) {
   const [status, setStatus] = useState<Status>(() => getCurrentStatus());
 
   useEffect(() => {
-    let cancelled = false;
-
-    const tick = async () => {
+    const tick = () => {
       const date = new Date();
-      if (!cancelled) setNow(date);
-
-      const override = await fetchStatusOverride();
-      if (cancelled) return;
-
-      setStatus(override ?? getCurrentStatus(date));
+      setNow(date);
+      setStatus(getCurrentStatus(date));
     };
+    tick();
 
-    void tick();
-
-    const id = window.setInterval(() => {
-      void tick();
-    }, 5_000);
-
-    return () => {
-      cancelled = true;
-      window.clearInterval(id);
-    };
+    const id = window.setInterval(tick, 1_000);
+    return () => window.clearInterval(id);
   }, []);
 
   const timeLabel = formatSaudiTime(now);
